@@ -1,0 +1,6 @@
+
+platform: mqtt
+name: "Outdoor humidity"
+state_topic: "tele/outdoor_light/SENSOR"
+value_template: "{{ value_json['AM2301']['Humidity'] }}"
+unit_of_measurement: '%'

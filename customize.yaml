@@ -1,0 +1,16 @@
+switch.outdoor_gate_light:
+  friendly_name: outdoor_gate_light
+  hidden: true
+sensor.outdoor_gate_light_dht11_humidit:
+  hidden: true
+sensor.outdoor_gate_light_dht11_tempera:
+  hidden: true
+sensor.yr_symbol:
+  friendly_name: yr Symbol
+switch.outdoor_light:
+  friendly_name: Door light
+climate.gas_boiler:
+  icon: boiler.jpg
+zone.dymerka_home: {}
+zone.home:
+  hidden: true

@@ -1,0 +1,7 @@
+# Ensure these YAML files are ignored, otherwise your secret data/credentials will leak.
+secrets.yaml
+home-assistant_v2.db
+
+# Ignore folders.
+deps
+.storage

@@ -1,0 +1,496 @@
+2019-03-18 00:10:20 WARNING (MainThread) [homeassistant.components.mqtt] Data in your config entry is going to override your configuration.yaml: {'broker': '192.168.0.222', 'discovery': True, 'password': 'Grushevskogo8a', 'port': 1883, 'username': 'home'}
+2019-03-18 00:10:41 ERROR (MainThread) [homeassistant.core] Error doing job: Task exception was never retrieved
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/usr/lib/python3.7/site-packages/homeassistant/components/discovery/__init__.py", line 183, in scan_devices
+    results = await hass.async_add_job(_discover, netdisco)
+  File "/data/data/com.termux/files/usr/lib/python3.7/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/data/data/com.termux/files/usr/lib/python3.7/site-packages/homeassistant/components/discovery/__init__.py", line 211, in _discover
+    netdisco.scan()
+  File "/data/data/com.termux/files/home/.homeassistant/deps/lib/python3.7/site-packages/netdisco/discovery.py", line 57, in scan
+    self.mdns.start()
+  File "/data/data/com.termux/files/home/.homeassistant/deps/lib/python3.7/site-packages/netdisco/mdns.py", line 23, in start
+    self.zeroconf = zeroconf.Zeroconf()
+  File "/data/data/com.termux/files/home/.homeassistant/deps/lib/python3.7/site-packages/zeroconf.py", line 1724, in __init__
+    interfaces = normalize_interface_choice(interfaces)
+  File "/data/data/com.termux/files/home/.homeassistant/deps/lib/python3.7/site-packages/zeroconf.py", line 1655, in normalize_interface_choice
+    return get_all_addresses()
+  File "/data/data/com.termux/files/home/.homeassistant/deps/lib/python3.7/site-packages/zeroconf.py", line 1645, in get_all_addresses
+    for iface in ifaddr.get_adapters()
+  File "/data/data/com.termux/files/home/.homeassistant/deps/lib/python3.7/site-packages/ifaddr/_posix.py", line 44, in get_adapters
+    retval = libc.getifaddrs(ctypes.byref(addr))
+  File "/data/data/com.termux/files/usr/lib/python3.7/ctypes/__init__.py", line 369, in __getattr__
+    func = self.__getitem__(name)
+  File "/data/data/com.termux/files/usr/lib/python3.7/ctypes/__init__.py", line 374, in __getitem__
+    func = self._FuncPtr((name_or_ordinal, self))
+AttributeError: undefined symbol: getifaddrs
+2019-03-18 00:11:12 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:11:12 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:11:12 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:11:13 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:11:13 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:11:13 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:11:13 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:11:13 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:11:13 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:11:13 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:11:13 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:11:13 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:12:12 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:12:12 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:12:12 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:12:13 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:12:13 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:12:13 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:12:13 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:12:13 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:12:13 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:12:13 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:12:13 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:12:13 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:13:12 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:13:12 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:13:12 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:13:13 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:13:13 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:13:13 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:13:13 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:13:13 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:13:13 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:13:13 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:13:13 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:13:13 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:13:39 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:13:39 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:13:39 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:13:39 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:13:39 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:13:39 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:13:40 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:13:40 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:13:40 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:13:41 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:13:41 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:13:41 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:13:41 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:13:41 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:13:41 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:13:54 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:13:54 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:13:54 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:13:54 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:13:54 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:13:54 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:13:55 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:13:55 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:13:55 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:13:55 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:13:55 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:13:55 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:13:56 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:13:56 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:13:56 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:13:56 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:13:56 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:13:56 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:13:56 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:13:56 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:13:56 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:15:02 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:15:02 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:15:02 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:15:02 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:15:02 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:15:02 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:15:13 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:15:13 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:15:13 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:15:14 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:15:14 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:15:14 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:15:14 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:15:14 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:15:14 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:15:15 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:15:15 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:15:15 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:15:15 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:15:15 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:15:15 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:15:15 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:15:15 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:15:15 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:16:15 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:16:15 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:16:15 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:16:15 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:16:15 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:16:15 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:16:15 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:16:15 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:16:15 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:16:15 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:16:15 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:16:15 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:17:18 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:17:18 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:17:18 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:17:18 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:17:18 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:17:18 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:17:20 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:17:20 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:17:20 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:17:20 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:17:20 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:17:20 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:17:20 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:17:20 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:17:20 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:17:20 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:17:20 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:17:20 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:18:04 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:18:04 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:18:04 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:18:05 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:18:05 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:18:05 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:18:06 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:18:06 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:18:06 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:18:06 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:18:06 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:18:06 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:18:06 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:18:06 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:18:06 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:18:07 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:18:07 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:18:07 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:19:09 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:19:09 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:19:09 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:19:10 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:19:10 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:19:10 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:19:11 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:19:11 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:19:11 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:19:11 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:19:11 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:19:11 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:19:11 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:19:11 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:19:11 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:19:12 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:19:12 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:19:12 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:20:11 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:20:11 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:20:11 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:20:11 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:20:11 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:20:11 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:20:11 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:20:11 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:20:11 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:20:11 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:20:11 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:20:11 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:21:11 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:21:11 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:21:11 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:21:11 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:21:11 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:21:11 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:21:11 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:21:11 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:21:11 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:21:12 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:21:12 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:21:12 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:21:12 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:21:12 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:21:12 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:21:12 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:21:12 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:21:57 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:21:57 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:21:57 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:21:57 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:21:57 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:21:57 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:22:14 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:22:14 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:22:14 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:22:14 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:22:14 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:22:14 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:22:14 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:22:14 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:22:14 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:22:15 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:22:15 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:22:15 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:22:15 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:22:15 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:22:15 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:22:15 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:22:15 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:22:15 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:22:16 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:22:16 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:22:16 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:22:16 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:22:16 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:22:16 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:22:17 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:22:17 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:22:17 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:22:17 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:22:17 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:22:17 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:22:17 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:22:17 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:22:48 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:22:48 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:22:48 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:22:49 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:22:49 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:22:49 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:22:49 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:22:49 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:22:49 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:22:49 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:22:50 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:22:50 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:22:50 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:22:50 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:22:50 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:22:50 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:22:50 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:22:50 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:22:50 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:22:50 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:22:50 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:22:50 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:22:50 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:23:32 WARNING (MainThread) [homeassistant.components.device_tracker] Updating device list from nmap_tracker took longer than the scheduled scan interval 0:00:30
+2019-03-18 00:23:49 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:23:49 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:23:49 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:23:50 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:23:50 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:23:50 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:23:50 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:23:50 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:23:50 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:23:50 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:23:50 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:23:50 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:23:50 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:23:50 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:23:50 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:23:51 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:23:51 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:24:50 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:24:50 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:24:50 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:24:50 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:24:50 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:24:50 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:24:50 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:24:50 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:24:50 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:24:50 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:24:50 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:24:50 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:24:50 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:24:50 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:24:50 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:24:50 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:24:50 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:25:49 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:25:49 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:25:49 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:25:50 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:25:50 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:25:50 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:25:50 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:25:50 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:25:50 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:25:50 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:25:50 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:25:50 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:25:50 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:25:50 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:25:50 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:25:50 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:25:50 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:27:04 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:27:04 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:27:04 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:27:05 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:27:05 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:27:05 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:27:05 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:27:05 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:27:05 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:27:05 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:27:05 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:27:05 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:27:06 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:27:06 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:27:06 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:27:06 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:27:06 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:27:06 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:27:06 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:27:06 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:27:06 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:27:07 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:27:07 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:27:30 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:27:30 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:27:30 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:27:30 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:27:30 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:27:30 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:27:31 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:27:31 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:27:31 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:27:32 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:27:32 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:27:32 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:27:32 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:27:32 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:27:32 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:27:32 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:27:32 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:27:32 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:27:32 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:27:32 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:27:32 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:27:33 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:27:33 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:27:54 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:27:54 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:27:54 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:27:54 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:27:54 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:27:54 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:27:55 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:27:55 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:27:55 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:27:55 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:27:55 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:27:55 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:27:56 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:27:56 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:27:56 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:27:56 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:27:56 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:27:56 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:27:56 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:27:56 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:27:56 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:27:57 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:27:57 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:28:34 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:28:34 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:28:34 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:28:34 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:28:34 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:28:34 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:28:35 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:28:35 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:28:35 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:28:35 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:28:35 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:28:35 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:28:35 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:28:35 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:28:35 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:28:36 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:28:36 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:28:36 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:28:36 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:28:36 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:28:36 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:28:37 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:28:37 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:29:35 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:29:35 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:29:35 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:29:35 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:29:35 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:29:35 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:29:36 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:29:36 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:29:36 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:29:36 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:29:36 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:29:36 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:29:36 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:29:36 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:29:36 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:29:37 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:29:37 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:30:35 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:30:35 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:30:35 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:30:35 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:30:35 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:30:35 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:30:36 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:30:36 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:30:36 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:30:36 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:30:36 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:30:36 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:30:36 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:30:36 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:30:36 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:30:37 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:30:37 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:31:08 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:31:08 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:31:08 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:31:09 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:31:09 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:31:09 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:31:09 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:31:09 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:31:09 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:31:10 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:31:10 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:31:10 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:31:10 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:31:10 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:31:10 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:31:10 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:31:10 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:31:11 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:31:11 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:31:11 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:31:11 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:31:11 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:31:11 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:32:10 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:32:10 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:32:10 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:32:10 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:32:10 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:32:10 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:32:10 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:32:10 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:32:10 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:32:10 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:32:10 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:32:10 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:32:11 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid mode: 
+2019-03-18 00:32:11 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:32:11 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 
+2019-03-18 00:32:11 ERROR (MainThread) [homeassistant.components.mqtt.climate] Could not parse temperature from 
+2019-03-18 00:32:11 ERROR (MainThread) [homeassistant.components.mqtt.climate] Invalid aux mode: 

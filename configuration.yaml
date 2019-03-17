@@ -1,0 +1,200 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: 50.605241
+  longitude: 30.927880
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 0
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: Europe/Kiev
+  # Customization file
+  customize: !include customize.yaml
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+# Show the introduction message on startup.
+introduction:
+
+# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+# http:
+#   base_url: example.duckdns.org:8123
+
+# Sensors
+sensor wether:
+  # Weather prediction
+  - platform: yr
+    name: Weather
+    forecast: 24
+    monitored_conditions:
+      - temperature
+      - symbol
+      - precipitation
+      - windSpeed
+      - pressure
+      - windDirection
+      - humidity
+      - fog
+      - cloudiness
+      - lowClouds
+      - mediumClouds
+      - highClouds
+      - dewpointTemperature
+
+sensor outdoor:
+  - platform: mqtt
+    name: "Outdoor temperature"
+    state_topic: "tele/outdoor_light/SENSOR"
+    value_template: "{{ value_json['AM2301']['Temperature'] }}"
+    unit_of_measurement: '°C'
+
+  - platform: mqtt
+    name: "Outdoor humidity"
+    state_topic: "tele/outdoor_light/SENSOR"
+    value_template: "{{ value_json['AM2301']['Humidity'] }}"
+    unit_of_measurement: '%'
+
+sensor kitchen_temp:
+  - platform: mqtt
+    name: "Kitchen temperature"
+    state_topic: "boiler-tasmota/tele/SENSOR"
+    value_template: "{{ value_json['DHT11']['Temperature'] }}"
+    unit_of_measurement: '°C'
+
+#{"health":"GOOD","percentage":100,"plugged":"PLUGGED_AC","status":"FULL","temperature":23.399999618530273}
+sensor A1000_batt:
+  - platform: mqtt
+    name: "Battery temp"
+    state_topic: "A1000/state/batt"
+    value_template: "{{ value_json.temperature }}"
+    unit_of_measurement: '°C'
+
+  - platform: mqtt
+    name: "Battery percent"
+    state_topic: "A1000/state/batt"
+    value_template: "{{ value_json.percentage }}"
+    unit_of_measurement: '%'   
+
+  - platform: mqtt
+    name: "AC plugged"
+    state_topic: "A1000/state/batt"
+    value_template: "{{ value_json.plugged }}"     
+
+climate:
+  - platform: mqtt
+    name: Gas boiler
+    qos: 1
+    availability_topic: "boiler-tasmota/tele/LWT" 
+    payload_available: "Online"
+    modes:
+      - "off"
+      - "heat"
+    mode_command_topic: "boiler-tasmota/cmnd/mem4"  
+    mode_state_topic: "boiler-tasmota/stat/RESULT"
+    mode_state_template: "{{ value_json.Mem4 }}"
+    current_temperature_topic: "boiler-tasmota/tele/SENSOR"
+    current_temperature_template: "{{ value_json['DHT11']['Temperature'] }}"
+    temperature_command_topic: "boiler-tasmota/cmnd/mem2"
+    temperature_state_topic: "boiler-tasmota/stat/RESULT"
+    temperature_state_template: "{{ value_json.Mem2 }}"
+    min_temp: 15
+    max_temp: 30
+    aux_command_topic: "boiler-tasmota/cmnd/mem5"
+    aux_state_topic: "boiler-tasmota/stat/RESULT"
+    aux_state_template: "{{ value_json.Mem5 }}"
+
+# Switches
+switch:
+
+  - platform: mqtt
+    name: "Gate light"
+    command_topic: "cmnd/outdoor_gate_light/Power1"
+    state_topic:  "stat/outdoor_gate_light/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+
+  - platform: mqtt
+    name: "Outdoor light"
+    command_topic: "cmnd/outdoor_light/Power1"
+    state_topic: "stat/outdoor_light/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+
+# Text to speech
+tts:
+  - platform: google
+
+mqtt:
+  broker: 192.168.0.222
+  client_id: home-assistant
+  username: !secret mqtt_user
+  password: !secret mqtt_password
+
+owntracks:
+
+device_tracker:
+  - platform: owntracks
+    max_gps_accuracy: 200
+    waypoints: true
+    mqtt_topic: "owntracks/#"
+    events_only: true 
+    consider_home: 120
+  - platform: nmap_tracker
+    hosts: 192.168.0.0/24
+    interval_seconds: 30
+    consider_home: 120
+    new_device_defaults:
+      track_new_devices: false
+
+zone:
+  - name: Home
+    latitude: 50.605241
+    longitude: 30.92788
+    radius: 300
+    icon: mdi:home-assistant
+  - name: Lyuda_home
+    latitude: 51.182624
+    longitude: 32.832286
+    radius: 100
+    icon: mdi:home-floor-l
+  - name: Ira_flat
+    latitude: 50.406972
+    longitude: 30.339832
+    radius: 100
+    icon: mdi:home-city-outline
+
+ffmpeg:
+  ffmpeg_bin: /data/data/com.termux/files/usr/bin/ffmpeg
+
+camera:
+   - platform: ffmpeg
+     name: Courtyard
+     input: rtsp://192.168.0.204:554/12
+   - platform: ffmpeg
+     name: Courtyard_HD
+     input: rtsp://192.168.0.204:554/11    
+
+# Example configuration.yaml entry with exclude
+recorder:
+  purge_keep_days: 5
+  exclude:
+    domains:
+      - automation
+      - weblink
+      - updater
+    entities:
+      - sun.sun # Don't record sun data
+      - sensor.last_boot # Comes from 'systemmonitor' sensor platform
+      - sensor.date
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+
+#switch: !include_dir_list switches/
+#sensor: !include_dir_list sensors/

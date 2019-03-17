@@ -1,0 +1,7 @@
+platform: mqtt
+name: "Outdoor light"
+command_topic: "cmnd/outdoor_light/Power1"
+state_topic: "stat/outdoor_light/POWER"
+qos: 1
+payload_on: "ON"
+payload_off: "OFF"
