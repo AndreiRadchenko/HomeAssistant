@@ -30,50 +30,11 @@ home_miA1:
   name: Ira's phone
   track: true 
 
-a4_2b_b0_b6_e5_f8:
-  hide_if_away: false
-  icon:
-  mac: A4:2B:B0:B6:E5:F8
-  name: a4 2b b0 b6 e5 f8
-  picture:
-  track: true
-
-dc_4f_22_df_92_cc:
-  hide_if_away: false
-  icon:
-  mac: DC:4F:22:DF:92:CC
-  name: dc 4f 22 df 92 cc
-  picture:
-  track: true
-
-cc_50_e3_4b_ca_51:
-  hide_if_away: false
-  icon:
-  mac: CC:50:E3:4B:CA:51
-  name: cc 50 e3 4b ca 51
-  picture:
-  track: true
-
-28_ad_3e_63_cb_0d:
-  hide_if_away: false
-  icon:
-  mac: 28:AD:3E:63:CB:0D
-  name: 28 ad 3e 63 cb 0d
-  picture:
-  track: true
 
 c0_14_3d_da_ce_c1:
   hide_if_away: false
   icon:
   mac: C0:14:3D:DA:CE:C1
   name: c0 14 3d da ce c1
-  picture:
-  track: true
-
-dc_4f_22_df_9a_e0:
-  hide_if_away: false
-  icon:
-  mac: DC:4F:22:DF:9A:E0
-  name: dc 4f 22 df 9a e0
   picture:
   track: true
