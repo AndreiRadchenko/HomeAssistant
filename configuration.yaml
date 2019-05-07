@@ -13,6 +13,26 @@ homeassistant:
   # Customization file
   customize: !include customize.yaml
 
+#http:
+  # For extra security set this to only accept connections on localhost if NGINX is on the same machine
+  #server_host: 192.168.0.222
+  # Update this line to be your domain
+  #base_url: https://radchenko.ddns.net
+  #use_x_forwarded_for: true
+  # You must set the trusted proxy IP address so that Home Assistant will properly accept connections
+  # Set this to your NGINX machine IP, or localhost if hosted on the same machine.
+  #trusted_proxies: 192.168.0.222
+
+http:
+  # For extra security set this to only accept connections on localhost if NGINX is on the same machine
+  #server_host: 127.0.0.1
+  # Update this line to be your domain
+  base_url: https://radchenko.ddns.net
+  use_x_forwarded_for: true
+  # You must set the trusted proxy IP address so that Home Assistant will properly accept connections
+  # Set this to your NGINX machine IP, or localhost if hosted on the same machine.
+  trusted_proxies: 192.168.0.222
+
 # Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
 
@@ -22,6 +42,23 @@ introduction:
 # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
 # http:
 #   base_url: example.duckdns.org:8123
+google_assistant:
+  project_id: hass-fe9c2
+  api_key: AIzaSyCneAaqhjwRurfRN3wBA_GK55-OtLNP7LQ
+  exposed_domains:
+    - switch
+    - light
+  entity_config:
+    switch.door_light:
+      name: "Door light"
+      aliases:
+        - DOOR_LIGHTS
+    group.outdoor_light:
+      expose: true
+
+weather:
+  - platform: darksky
+    api_key: 76b6528a76bf1e4c8f172a1428a09272
 
 # Sensors
 sensor wether:
@@ -63,6 +100,26 @@ sensor kitchen_temp:
     state_topic: "boiler-tasmota/tele/SENSOR"
     value_template: "{{ value_json['DHT11']['Temperature'] }}"
     unit_of_measurement: '°C'
+
+sensor guest_room_temp:
+  - platform: mqtt
+    name: "Guest room temperature"
+    state_topic: "tele/guest_room/SENSOR"
+    value_template: "{{ value_json['DHT11']['Temperature'] }}"
+    unit_of_measurement: '°C'    
+
+sensor cellar:
+  - platform: mqtt
+    name: "Cellar temperature"
+    state_topic: "tele/cellar_light/SENSOR"
+    value_template: "{{ value_json['AM2301']['Temperature'] }}"
+    unit_of_measurement: '°C'
+
+  - platform: mqtt
+    name: "Cellar humidity"
+    state_topic: "tele/cellar_light/SENSOR"
+    value_template: "{{ value_json['AM2301']['Humidity'] }}"
+    unit_of_measurement: '%'    
 
 #{"health":"GOOD","percentage":100,"plugged":"PLUGGED_AC","status":"FULL","temperature":23.399999618530273}
 sensor A1000_batt:
@@ -107,8 +164,7 @@ climate:
     aux_state_template: "{{ value_json.Mem5 }}"
 
 # Switches
-switch:
-
+switch gate_light:
   - platform: mqtt
     name: "Gate light"
     command_topic: "cmnd/outdoor_gate_light/Power1"
@@ -117,13 +173,61 @@ switch:
     payload_on: "ON"
     payload_off: "OFF"
 
+switch door_light:
   - platform: mqtt
-    name: "Outdoor light"
+    name: "Door light"
     command_topic: "cmnd/outdoor_light/Power1"
     state_topic: "stat/outdoor_light/POWER"
     qos: 1
     payload_on: "ON"
     payload_off: "OFF"
+
+switch guest_room_light:
+  - platform: mqtt
+    name: "Guest room light"
+    command_topic: "cmnd/guest_room/Power1"
+    state_topic: "stat/guest_room/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"    
+
+switch cellar_light:
+  - platform: mqtt
+    name: "Cellar light"
+    command_topic: "cmnd/cellar_light/Power1"
+    state_topic: "stat/cellar_light/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+
+group:
+  outdoor_light:
+    name: Outdoor light
+    view: true
+    icon: mdi:lightbulb-on
+    entities:
+      - switch.gate_light
+      - switch.door_light
+  second_floor_light:
+    name: Second floor light
+    view: true
+    icon: mdi:lightbulb-on
+    entities:
+      - switch.guest_room_light     
+
+light:
+  - platform: switch
+    name: Guest room light
+    entity_id: switch.guest_room_light  
+  - platform: switch
+    name: Gate light
+    entity_id: switch.gate_light  
+  - platform: switch
+    name: Door light
+    entity_id: switch.door_light
+  - platform: switch
+    name: Cellar light
+    entity_id: switch.cellar_light             
 
 # Text to speech
 tts:
@@ -143,13 +247,13 @@ device_tracker:
     waypoints: true
     mqtt_topic: "owntracks/#"
     events_only: true 
-    consider_home: 300
-  - platform: nmap_tracker
-    hosts: 192.168.0.100-200
-    interval_seconds: 120
-    consider_home: 300
-    new_device_defaults:
-      track_new_devices: false
+    consider_home: 1200
+  # - platform: nmap_tracker
+  #   hosts: 192.168.0.100-200
+  #   interval_seconds: 120
+  #   consider_home: 1200
+  #   new_device_defaults:
+  #     track_new_devices: false
 
 zone:
   - name: Home
@@ -174,10 +278,10 @@ ffmpeg:
 camera:
    - platform: ffmpeg
      name: Courtyard
-     input: rtsp://192.168.0.204:554/12
+     input: !secret rtsp_sd
    - platform: ffmpeg
      name: Courtyard_HD
-     input: rtsp://192.168.0.204:554/11    
+     input: !secret rtsp_hd   
 
 # Example configuration.yaml entry with exclude
 recorder:
@@ -192,7 +296,7 @@ recorder:
       - sensor.last_boot # Comes from 'systemmonitor' sensor platform
       - sensor.date
 
-group: !include groups.yaml
+#group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
 

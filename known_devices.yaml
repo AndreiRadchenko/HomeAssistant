@@ -38,3 +38,35 @@ c0_14_3d_da_ce_c1:
   name: c0 14 3d da ce c1
   picture:
   track: true
+
+d8_9d_67_bb_fd_d2:
+  hide_if_away: false
+  icon:
+  mac: D8:9D:67:BB:FD:D2
+  name: d8 9d 67 bb fd d2
+  picture:
+  track: true
+
+f0_7b_cb_81_0a_69:
+  hide_if_away: false
+  icon:
+  mac: F0:7B:CB:81:0A:69
+  name: f0 7b cb 81 0a 69
+  picture:
+  track: true
+
+dc_4f_22_df_fd_71:
+  hide_if_away: false
+  icon:
+  mac: DC:4F:22:DF:FD:71
+  name: dc 4f 22 df fd 71
+  picture:
+  track: true
+
+dc_4f_22_df_ff_32:
+  hide_if_away: false
+  icon:
+  mac: DC:4F:22:DF:FF:32
+  name: dc 4f 22 df ff 32
+  picture:
+  track: true
