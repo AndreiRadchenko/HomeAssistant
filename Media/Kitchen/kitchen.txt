@@ -48,6 +48,7 @@
 1. [Alexa, how are you? What is the weather?] 
 2. [Я мию посуд, витираю піт з чола. Alexa, turn on sink light and play spotify. Стою пританцьовую] 
 3. [Я ставлю варити яйця. Alexa, set timer for boil eggs] 
-4. [Я сижу за столом посередині, чищу варене яйце. Alexa, turn on light and close kitchen blind]
+4. [Я ставлю варити яйця. Alexa, drop into Dimas echo] 
+5. [Я сижу за столом посередині, чищу варене яйце. Alexa, turn on light and close kitchen blind]
 
 Такі казкові можливості я втілив на своїй кухні. Якщо вам сподобалось, поставте відосику вподобайку. Alexa, say goodbye to our viewers
